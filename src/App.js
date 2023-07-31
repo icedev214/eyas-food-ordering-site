@@ -17,7 +17,10 @@ const eyasTheme = createTheme({
       main: "#ffffff",
     },
     golden: {
-      main: "#f4d35e",
+      main: "#fce57f",
+    },
+    green: {
+      main: "#0ead69",
     },
   },
   typography: {

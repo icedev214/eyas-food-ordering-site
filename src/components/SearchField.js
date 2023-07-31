@@ -8,6 +8,7 @@ const SearchField = () => {
       variant="standard"
       placeholder="Search..."
       sx={{
+        minWidth: 500,
         input: { color: "white", fontSize: 16 },
         "& .MuiInput-underline:before": {
           borderBottomColor: "white",

@@ -4,16 +4,21 @@ import {
   CardContent,
   CardActions,
   Typography,
+  Box,
 } from "@mui/material";
 
 const SaleCard = ({ data }) => {
   return (
-    <Card sx={{ m: 1 }}>
+    <Card sx={{ m: 2 }}>
       <CardContent>
         <Typography>{data.name}</Typography>
       </CardContent>
       <CardActions>
-        <Button>Add to Cart</Button>
+        <Typography>12.95$</Typography>
+        <Box sx={{ flexGrow: 1 }} />
+        <Button variant="contained" color="green" sx={{ color: "white" }}>
+          ADD TO CART
+        </Button>
       </CardActions>
     </Card>
   );

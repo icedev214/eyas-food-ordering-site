@@ -13,8 +13,12 @@ const Offset = styled("div")(({ theme }) => theme.mixins.toolbar);
 const NavBar = () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="fixed" style={{ background: "#ea0713" }}>
-        <Toolbar>
+      <AppBar
+        position="fixed"
+        style={{ background: "#ea0713" }}
+        sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
+      >
+        <Toolbar style={{ paddingLeft: 12, paddingRight: 12 }}>
           <img src="/chef.jpg" alt="chef" />
           <Box sx={{ flexGrow: 1 }} />
           <SearchField />

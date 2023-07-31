@@ -34,9 +34,9 @@ const SalesContent = () => {
 
   return (
     <Grid>
-      {salesData.map((data) => {
+      {salesData.map((data, index) => {
         return (
-          <Grid item lg={6} md={12}>
+          <Grid item lg={6} md={12} key={index}>
             <SaleCard data={data} />
           </Grid>
         );
