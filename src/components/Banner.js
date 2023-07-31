@@ -1,5 +1,7 @@
-import { Box, Card, CardContent, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
+
 import PhoneIcon from "@mui/icons-material/Phone";
+import PlaceIcon from "@mui/icons-material/Place";
 
 const Banner = () => {
   return (
@@ -71,6 +73,32 @@ const Banner = () => {
       >
         Menu
       </Typography>
+      <Button
+        variant="contained"
+        color="golden"
+        endIcon={
+          <PlaceIcon
+            sx={{
+              transform: "rotate(90deg)",
+              width: 28,
+              height: 28,
+              color: "black",
+            }}
+          />
+        }
+        sx={{
+          color: "black",
+          borderRadius: 0,
+          height: 30,
+          fontSize: 16,
+          p: 1,
+          transform: "translateX(-50%) rotate(-90deg) translateY(50%)",
+          position: "absolute",
+          left: 0,
+        }}
+      >
+        Our Location
+      </Button>
     </Box>
   );
 };
