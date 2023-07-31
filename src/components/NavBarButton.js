@@ -5,7 +5,8 @@ const NavBarButton = ({ children, icon }) => {
     <Button
       variant="standard"
       startIcon={icon}
-      sx={{ color: "white", fontSize: 14, borderRadius: 0, height: "100%" }}
+      sx={{ color: "white", fontSize: 14, borderRadius: 0, height: 64 }}
+      disableRipple
     >
       {children}
     </Button>
