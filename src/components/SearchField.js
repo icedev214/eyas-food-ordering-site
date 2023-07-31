@@ -8,8 +8,14 @@ const SearchField = () => {
       variant="standard"
       placeholder="Search..."
       sx={{
-        minWidth: 500,
-        input: { color: "white", fontSize: 16 },
+        minWidth: 400,
+        input: {
+          color: "white",
+          fontSize: 16,
+          "&::placeholder": {
+            opacity: 1,
+          },
+        },
         "& .MuiInput-underline:before": {
           borderBottomColor: "white",
           borderWidth: 1,
@@ -23,7 +29,9 @@ const SearchField = () => {
       InputProps={{
         endAdornment: (
           <InputAdornment position="end">
-            <SearchIcon sx={{ color: "white" }} />
+            <SearchIcon
+              sx={{ color: "white", fontSize: 28, fontWeight: 600 }}
+            />
           </InputAdornment>
         ),
       }}
