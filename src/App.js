@@ -9,11 +9,19 @@ import Home from "pages/Home";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
 
+import "@fontsource/lato";
+
 const eyasTheme = createTheme({
   palette: {
-    white: {
+    fore: {
       main: "#ffffff",
     },
+    golden: {
+      main: "#f4d35e",
+    },
+  },
+  typography: {
+    fontFamily: "lato",
   },
   components: {
     MuiButton: {
