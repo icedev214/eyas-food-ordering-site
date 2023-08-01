@@ -8,6 +8,7 @@ const Cart = () => {
   return (
     <Drawer
       sx={{
+        boxShadow: 2,
         width: drawerWidth,
         flexShrink: 0,
         "& .MuiDrawer-paper": {

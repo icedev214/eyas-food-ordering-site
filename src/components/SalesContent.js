@@ -1,4 +1,4 @@
-import { Grid } from "@mui/material";
+import { Grid, Pagination, Box } from "@mui/material";
 import { useState } from "react";
 import SaleCard from "./SaleCard";
 
@@ -97,15 +97,27 @@ const SalesContent = () => {
   const [salesData, setSalesData] = useState(sales_data);
 
   return (
-    <Grid container spacing={2}>
-      {salesData.map((data, index) => {
-        return (
-          <Grid item lg={6} md={12} key={index}>
-            <SaleCard data={data} />
-          </Grid>
-        );
-      })}
-    </Grid>
+    <>
+      <Grid container spacing={2}>
+        {salesData.map((data, index) => {
+          return (
+            <Grid item lg={6} md={12} key={index}>
+              <SaleCard data={data} />
+            </Grid>
+          );
+        })}
+      </Grid>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          mt: 4,
+        }}
+      >
+        <Pagination count={10} shape="rounded" />
+      </Box>
+    </>
   );
 };
 

@@ -1,4 +1,4 @@
-import { Box, Grid } from "@mui/material";
+import { Grid } from "@mui/material";
 
 import SalesMenu from "components/SalesMenu";
 import SalesContent from "components/SalesContent";
