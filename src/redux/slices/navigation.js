@@ -9,7 +9,7 @@ export const navigationSlice = createSlice({
   initialState,
   reducers: {
     setPage: (state, action) => {
-      state.page = action.payload.page;
+      state.page = action.payload;
     },
   },
 });

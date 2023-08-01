@@ -17,7 +17,6 @@ const Footer = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          zIndex: (theme) => theme.zIndex.drawer + 1,
         }}
       >
         {items.map((item, index) => {

@@ -21,6 +21,8 @@ import CookieButton from "components/CookieButton";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
 
+import { useSelector } from "react-redux";
+
 import "@fontsource/lato";
 
 const eyasTheme = createTheme({
@@ -50,6 +52,10 @@ const eyasTheme = createTheme({
 });
 
 function App() {
+  const { page } = useSelector((state) => state.navigation);
+
+  console.log(page);
+
   return (
     <ThemeProvider theme={eyasTheme}>
       <CssBaseline />
@@ -65,7 +71,7 @@ function App() {
               <Route path="/location" element={<Location />} />
             </Routes>
           </Box>
-          <Cart />
+          {page == "home" ? <Cart /> : null}
         </Box>
         <Footer />
         <CookieButton />
