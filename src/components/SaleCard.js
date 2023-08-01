@@ -18,6 +18,9 @@ const SaleCard = ({ data }) => {
         borderRadius: 0,
         display: "flex",
         flexDirection: "column",
+        ":hover": {
+          boxShadow: 10,
+        },
       }}
     >
       <CardContent sx={{ px: 2.5, py: 2.5, flexGrow: 1 }}>
