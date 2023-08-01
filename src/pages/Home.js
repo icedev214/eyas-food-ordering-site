@@ -1,26 +1,18 @@
-import { Box } from "@mui/material";
+import { Grid } from "@mui/material";
 
-import NavBar from "components/NavBar";
-import Banner from "components/Banner";
-import HomeContent from "components/HomeContent";
-import Cart from "components/Cart";
-import Footer from "components/Footer";
-import CookieButton from "components/CookieButton";
+import SalesMenu from "components/SalesMenu";
+import SalesContent from "components/SalesContent";
 
 const Home = () => {
   return (
-    <>
-      <NavBar />
-      <Box sx={{ display: "flex", mb: 5 }}>
-        <Box sx={{ flexGrow: 1 }}>
-          <Banner />
-          <HomeContent />
-        </Box>
-        <Cart />
-      </Box>
-      <Footer />
-      <CookieButton />
-    </>
+    <Grid container spacing={2.6} sx={{ px: 10, py: 3 }}>
+      <Grid item lg={4}>
+        <SalesMenu />
+      </Grid>
+      <Grid item lg={8}>
+        <SalesContent />
+      </Grid>
+    </Grid>
   );
 };
 
