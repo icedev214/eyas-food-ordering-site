@@ -34,7 +34,7 @@ const eyasTheme = createTheme({
       main: "#fce57f",
     },
     green: {
-      main: "#4caf50",
+      main: "#4fbe62",
     },
   },
   typography: {

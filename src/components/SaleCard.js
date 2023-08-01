@@ -33,7 +33,11 @@ const SaleCard = ({ data }) => {
       <CardActions sx={{ px: 2.5, py: 1.5 }}>
         <Typography>{`£${data.price}`}</Typography>
         <Box sx={{ flexGrow: 1 }} />
-        <Button variant="contained" color="green" sx={{ color: "white" }}>
+        <Button
+          variant="contained"
+          color="green"
+          sx={{ color: "white", letterSpacing: 0.5 }}
+        >
           ADD TO CART
         </Button>
       </CardActions>
