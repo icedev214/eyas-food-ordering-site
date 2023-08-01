@@ -41,17 +41,17 @@ const Footer = () => {
           bgcolor: "#dddddd",
           display: "flex",
           alignItems: "center",
-          py: 2,
-          pl: 5,
+          py: 1.8,
+          pl: 5.4,
           pr: 3,
         }}
       >
-        <Typography>
+        <Typography sx={{ fontSize: 14 }}>
           © 2018 All Rights Reserved. Powered by <b>Zienix</b>
         </Typography>
         <Box sx={{ flexGrow: 1 }} />
-        <PhoneAndroidIcon />
-        <Typography>See it on Mobile</Typography>
+        <PhoneAndroidIcon sx={{ fontSize: 18 }} />
+        <Typography sx={{ fontSize: 14, ml: 0.4 }}>See it on Mobile</Typography>
       </Box>
     </>
   );
