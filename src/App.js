@@ -10,6 +10,8 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
 
 import "@fontsource/lato";
+import SignIn from "pages/SignIn";
+import SignUp from "pages/SignUp";
 
 const eyasTheme = createTheme({
   palette: {
@@ -44,6 +46,9 @@ function App() {
       <Router>
         <Routes>
           <Route index element={<Home />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/location" element={<Location />} />
         </Routes>
       </Router>
     </ThemeProvider>

@@ -1,16 +1,18 @@
-import { AppBar, Toolbar, Typography, Box } from "@mui/material";
+import { AppBar, Toolbar, Button, Box } from "@mui/material";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 
-import NavBarButton from "components/NavBarButton";
 import SearchField from "components/SearchField";
 
 import styled from "@emotion/styled";
+import { useNavigate } from "react-router-dom";
 
 const Offset = styled("div")(({ theme }) => theme.mixins.toolbar);
 
 const NavBar = () => {
+  const navigate = useNavigate();
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
@@ -19,21 +21,40 @@ const NavBar = () => {
         sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
       >
         <Toolbar style={{ paddingLeft: 12, paddingRight: 12 }}>
-          <img src="/chef.jpg" alt="chef" />
+          <img src="/images/chef.jpg" alt="chef" />
           <Box sx={{ flexGrow: 1 }} />
           <SearchField />
           <Box sx={{ flexGrow: 1 }} />
-          <NavBarButton
-            icon={<AccessTimeIcon sx={{ width: 30, height: 30 }} />}
+          <Button
+            variant="standard"
+            startIcon={<AccessTimeIcon sx={{ width: 30, height: 30 }} />}
+            sx={{ color: "white", fontSize: 14, borderRadius: 0, height: 64 }}
+            disableRipple
           >
             Open
-          </NavBarButton>
-          <NavBarButton icon={<ExitToAppIcon sx={{ width: 30, height: 30 }} />}>
+          </Button>
+          <Button
+            variant="standard"
+            startIcon={<ExitToAppIcon sx={{ width: 30, height: 30 }} />}
+            sx={{ color: "white", fontSize: 14, borderRadius: 0, height: 64 }}
+            disableRipple
+            onClick={() => {
+              navigate("/signin");
+            }}
+          >
             Sign In
-          </NavBarButton>
-          <NavBarButton icon={<PersonAddIcon sx={{ width: 30, height: 30 }} />}>
+          </Button>
+          <Button
+            variant="standard"
+            startIcon={<PersonAddIcon sx={{ width: 30, height: 30 }} />}
+            sx={{ color: "white", fontSize: 14, borderRadius: 0, height: 64 }}
+            disableRipple
+            onClick={() => {
+              navigate("/signup");
+            }}
+          >
             Sign Up
-          </NavBarButton>
+          </Button>
         </Toolbar>
       </AppBar>
       <Offset />
