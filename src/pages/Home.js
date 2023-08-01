@@ -14,7 +14,7 @@ const Home = () => {
           <Banner />
           <HomeContent />
         </Box>
-        <Box sx={{ width: 350 }} />
+        <Box sx={{ minWidth: 350 }} />
       </Box>
       <Cart />
     </>
