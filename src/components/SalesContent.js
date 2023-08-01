@@ -101,7 +101,7 @@ const SalesContent = () => {
       <Grid container spacing={2}>
         {salesData.map((data, index) => {
           return (
-            <Grid item lg={6} md={12} key={index}>
+            <Grid item lg={6} xs={12} key={index}>
               <SaleCard data={data} />
             </Grid>
           );

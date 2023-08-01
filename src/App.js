@@ -54,8 +54,6 @@ const eyasTheme = createTheme({
 function App() {
   const { page } = useSelector((state) => state.navigation);
 
-  console.log(page);
-
   return (
     <ThemeProvider theme={eyasTheme}>
       <CssBaseline />
