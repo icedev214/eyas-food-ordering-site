@@ -17,8 +17,7 @@ import { Link } from "react-router-dom";
 import { setPage } from "redux/slices/navigation";
 
 import { useDispatch } from "react-redux";
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -42,9 +41,9 @@ const SignIn = () => {
     >
       <Card sx={{ flexGrow: 1, maxWidth: 600, borderRadius: 0 }} elevation={3}>
         <CardContent sx={{ p: 3 }}>
-          <Typography sx={{ fontSize: 16 }}>E-mail</Typography>
+          <Typography sx={{ fontSize: 14 }}>E-mail</Typography>
           <TextField variant="standard" color="green" fullWidth></TextField>
-          <Typography sx={{ fontSize: 16, mt: 2 }}>Password</Typography>
+          <Typography sx={{ fontSize: 14, mt: 2 }}>Password</Typography>
           <TextField
             variant="standard"
             color="green"
@@ -85,7 +84,7 @@ const SignIn = () => {
             <Button
               variant="contained"
               color="green"
-              sx={{ color: "white", px: 4 }}
+              sx={{ color: "white", px: 4, letterSpacing: 0.6 }}
             >
               SIGN IN
             </Button>
