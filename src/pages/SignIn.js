@@ -13,10 +13,21 @@ import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
 import { Link } from "react-router-dom";
+
+import { setPage } from "redux/slices/navigation";
+
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
 import { useState } from "react";
 
 const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(setPage("signin"));
+  }, []);
 
   return (
     <Box

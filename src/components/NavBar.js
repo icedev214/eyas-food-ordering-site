@@ -7,15 +7,11 @@ import SearchField from "components/SearchField";
 
 import styled from "@emotion/styled";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-
-import { setPage } from "redux/slices/navigation";
 
 const Offset = styled("div")(({ theme }) => theme.mixins.toolbar);
 
 const NavBar = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -33,7 +29,6 @@ const NavBar = () => {
               cursor: "pointer",
             }}
             onClick={() => {
-              dispatch(setPage("home"));
               navigate("/");
             }}
           />
@@ -54,7 +49,6 @@ const NavBar = () => {
             sx={{ color: "white", fontSize: 14, borderRadius: 0, height: 64 }}
             disableRipple
             onClick={() => {
-              dispatch(setPage("signin"));
               navigate("/signin");
             }}
           >
@@ -66,7 +60,6 @@ const NavBar = () => {
             sx={{ color: "white", fontSize: 14, borderRadius: 0, height: 64 }}
             disableRipple
             onClick={() => {
-              dispatch(setPage("signup"));
               navigate("/signup");
             }}
           >

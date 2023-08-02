@@ -5,7 +5,7 @@ import SentimentNeutralIcon from "@mui/icons-material/SentimentNeutral";
 const Cart = () => {
   return (
     <Card
-      sx={{ minWidth: 350, borderRadius: 0, overflow: "clip" }}
+      sx={{ minWidth: 350, borderRadius: 0, overflow: "clip", mb: 5 }}
       elevation={3}
     >
       <CardContent sx={{ position: "sticky", top: 0 }}>
