@@ -6,9 +6,16 @@ import {
   Typography,
   Box,
   Divider,
+  useMediaQuery,
 } from "@mui/material";
 
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+
 const SaleCard = ({ data }) => {
+  const down_lg_matches = useMediaQuery((theme) =>
+    theme.breakpoints.down("lg")
+  );
+
   return (
     <Card
       elevation={2}
@@ -36,9 +43,21 @@ const SaleCard = ({ data }) => {
         <Button
           variant="contained"
           color="green"
-          sx={{ color: "white", letterSpacing: 0.5 }}
+          startIcon={<AddShoppingCartIcon />}
+          sx={{
+            color: "white",
+            letterSpacing: 0.5,
+            fontSize: 14,
+            height: 36,
+            minWidth: 54,
+            "& .MuiButton-startIcon": {
+              marginLeft: "0px",
+              marginRight: down_lg_matches ? "0px" : "6px",
+            },
+            px: 1.6,
+          }}
         >
-          ADD TO CART
+          {down_lg_matches ? "" : "ADD TO CART"}
         </Button>
       </CardActions>
     </Card>
