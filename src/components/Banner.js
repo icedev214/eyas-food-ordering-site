@@ -3,11 +3,25 @@ import { Box, Button, Typography } from "@mui/material";
 import PhoneIcon from "@mui/icons-material/Phone";
 import PlaceIcon from "@mui/icons-material/Place";
 
+import { useSelector } from "react-redux";
+
+const pageBannerDic = {
+  home: "Menu",
+  signin: "Sign In",
+  signup: "Sign Up",
+  location: "Our Location",
+};
+
 const Banner = () => {
+  const { page } = useSelector((state) => state.navigation);
+
   return (
     <Box
       sx={{
-        backgroundImage: "url('/images/banner-back-1.jpg')",
+        backgroundImage:
+          page == "home"
+            ? "url('/images/banner-back-1.jpg')"
+            : "url('/images/steak.jpg')",
         backgroundPosition: "center",
         height: 240,
         width: "100%",
@@ -71,34 +85,36 @@ const Banner = () => {
             "2px 2px 4px rgba(0, 0, 0, 0.6), -2px -2px 4px rgba(0, 0, 0, 0.6)",
         }}
       >
-        Menu
+        {pageBannerDic[page]}
       </Typography>
-      <Button
-        variant="contained"
-        color="golden"
-        endIcon={
-          <PlaceIcon
-            sx={{
-              transform: "rotate(90deg)",
-              width: 28,
-              height: 28,
-              color: "black",
-            }}
-          />
-        }
-        sx={{
-          color: "black",
-          borderRadius: 0,
-          height: 30,
-          fontSize: 16,
-          p: 1,
-          transform: "translateX(-50%) rotate(-90deg) translateY(50%)",
-          position: "absolute",
-          left: 0,
-        }}
-      >
-        Our Location
-      </Button>
+      {page == "location" ? null : (
+        <Button
+          variant="contained"
+          color="golden"
+          endIcon={
+            <PlaceIcon
+              sx={{
+                transform: "rotate(90deg)",
+                width: 28,
+                height: 28,
+                color: "black",
+              }}
+            />
+          }
+          sx={{
+            color: "black",
+            borderRadius: 0,
+            height: 30,
+            fontSize: 16,
+            p: 1,
+            transform: "translateX(-50%) rotate(-90deg) translateY(50%)",
+            position: "absolute",
+            left: 0,
+          }}
+        >
+          Our Location
+        </Button>
+      )}
     </Box>
   );
 };
