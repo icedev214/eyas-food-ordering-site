@@ -31,9 +31,16 @@ const SignIn = () => {
 
   return (
     <Box
-      sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        px: 10,
+        py: 3,
+        mb: 2,
+      }}
     >
-      <Card sx={{ minWidth: 400, borderRadius: 0, m: 3 }} elevation={3}>
+      <Card sx={{ flexGrow: 1, maxWidth: 600, borderRadius: 0 }} elevation={3}>
         <CardContent sx={{ p: 3 }}>
           <Typography sx={{ fontSize: 16 }}>E-mail</Typography>
           <TextField variant="standard" color="green" fullWidth></TextField>
@@ -55,11 +62,12 @@ const SignIn = () => {
                     }}
                     edge="end"
                     size="small"
+                    disableRipple
                   >
                     {showPassword ? (
-                      <VisibilityOff sx={{ fontSize: 20 }} />
+                      <VisibilityOff sx={{ color: "#333333", fontSize: 20 }} />
                     ) : (
-                      <Visibility sx={{ fontSize: 20 }} />
+                      <Visibility sx={{ color: "#333333", fontSize: 20 }} />
                     )}
                   </IconButton>
                 </InputAdornment>
@@ -74,8 +82,12 @@ const SignIn = () => {
               mt: 3,
             }}
           >
-            <Button variant="contained" color="green" sx={{ color: "white" }}>
-              Sign In
+            <Button
+              variant="contained"
+              color="green"
+              sx={{ color: "white", px: 4 }}
+            >
+              SIGN IN
             </Button>
           </Box>
           <Box sx={{ display: "flex", alignItems: "center", mt: 2 }}>
