@@ -29,9 +29,7 @@ const SearchField = () => {
       InputProps={{
         endAdornment: (
           <InputAdornment position="end">
-            <SearchIcon
-              sx={{ color: "white", fontSize: 28, fontWeight: 600 }}
-            />
+            <SearchIcon sx={{ color: "white", fontSize: 28 }} />
           </InputAdornment>
         ),
       }}

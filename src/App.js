@@ -59,7 +59,7 @@ function App() {
       <CssBaseline />
       <Router>
         <NavBar />
-        <Box sx={{ display: "flex", mb: 5 }}>
+        <Box sx={{ display: "flex" }}>
           <Box sx={{ flexGrow: 1 }}>
             <Banner />
             <Routes>
