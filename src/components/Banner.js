@@ -89,6 +89,7 @@ const Banner = () => {
       </Typography>
       {page == "location" ? null : (
         <Button
+          href="/location"
           variant="contained"
           color="golden"
           endIcon={

@@ -69,7 +69,9 @@ function App() {
               <Route path="/location" element={<Location />} />
             </Routes>
           </Box>
-          {page == "home" ? <Cart /> : null}
+          <Routes>
+            <Route index element={<Cart />} />
+          </Routes>
         </Box>
         <Footer />
         <CookieButton />

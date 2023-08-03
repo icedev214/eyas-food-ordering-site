@@ -47,7 +47,7 @@ const Footer = () => {
         }}
       >
         <Typography sx={{ fontSize: 14 }}>
-          © 2018 All Rights Reserved. Powered by <b>Zienix</b>
+          &copy; 2018 All Rights Reserved. Powered by <b>Zienix</b>
         </Typography>
         <Box sx={{ flexGrow: 1 }} />
         <PhoneAndroidIcon sx={{ fontSize: 18 }} />
