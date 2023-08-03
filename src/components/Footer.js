@@ -1,41 +1,81 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Grid } from "@mui/material";
 import PhoneAndroidIcon from "@mui/icons-material/PhoneAndroid";
 
-const items = [
-  "Cookie Policy",
-  "Our Location",
-  "Privacy Policy",
-  "Terms of Use",
-];
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <>
-      <Box
-        sx={{
-          bgcolor: "#eeeeee",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        {items.map((item, index) => {
-          return (
-            <Box
-              key={index}
-              sx={{
-                width: "25%",
-                height: 100,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
+      <Grid container spacing={0} sx={{ bgcolor: "#eeeeee", py: 2 }}>
+        <Grid item xs={12} sm={6} md={3}>
+          <Box
+            sx={{
+              height: 60,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Link
+              to="/cookie-policy"
+              style={{ textDecoration: "none", color: "#000000de" }}
             >
-              <Typography>{item}</Typography>
-            </Box>
-          );
-        })}
-      </Box>
+              <Typography>Cookie Policy</Typography>
+            </Link>
+          </Box>
+        </Grid>
+        <Grid item xs={12} sm={6} md={3}>
+          <Box
+            sx={{
+              height: 60,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Link
+              to="/location"
+              style={{ textDecoration: "none", color: "#000000de" }}
+            >
+              <Typography>Our Location</Typography>
+            </Link>
+          </Box>
+        </Grid>
+        <Grid item xs={12} sm={6} md={3}>
+          <Box
+            sx={{
+              height: 60,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Link
+              to="/privacy-policy"
+              style={{ textDecoration: "none", color: "#000000de" }}
+            >
+              <Typography>Privacy Policy</Typography>
+            </Link>
+          </Box>
+        </Grid>
+        <Grid item xs={12} sm={6} md={3}>
+          <Box
+            sx={{
+              height: 60,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Link
+              to="/terms-of-use"
+              style={{ textDecoration: "none", color: "#000000de" }}
+            >
+              <Typography>Terms of Use</Typography>
+            </Link>
+          </Box>
+        </Grid>
+      </Grid>
       <Box
         sx={{
           bgcolor: "#dddddd",

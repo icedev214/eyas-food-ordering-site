@@ -11,6 +11,9 @@ import Home from "pages/Home";
 import SignIn from "pages/SignIn";
 import SignUp from "pages/SignUp";
 import Location from "pages/Location";
+import CookiePolicy from "pages/CookiePolicy";
+import PrivacyPolicy from "pages/PrivacyPolicy";
+import TermsOfUse from "pages/TermsOfUse";
 
 import NavBar from "components/NavBar";
 import Banner from "components/Banner";
@@ -67,6 +70,9 @@ function App() {
               <Route path="/signin" element={<SignIn />} />
               <Route path="/signup" element={<SignUp />} />
               <Route path="/location" element={<Location />} />
+              <Route path="/cookie-policy" element={<CookiePolicy />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/terms-of-use" element={<TermsOfUse />} />
             </Routes>
           </Box>
           <Routes>
