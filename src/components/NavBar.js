@@ -92,7 +92,7 @@ const NavBar = () => {
                   marginLeft: "0px",
                   marginRight: down_lg_matches ? "0px" : "6px",
                 },
-                px: 1.6,
+                px: 1.2,
                 cursor: "default",
               }}
               style={{
@@ -171,7 +171,7 @@ const NavBar = () => {
               "&:hover": {
                 backgroundColor: "#0000001a",
               },
-              px: 1.6,
+              px: 1.2,
             }}
             disableRipple
             onClick={() => {
@@ -196,7 +196,7 @@ const NavBar = () => {
               "&:hover": {
                 backgroundColor: "#0000001a",
               },
-              px: 1.6,
+              px: 1.2,
             }}
             disableRipple
             onClick={() => {
@@ -205,17 +205,48 @@ const NavBar = () => {
           >
             {down_lg_matches ? "" : "Sign Up"}
           </Button>
-          <Box
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              cursor: "pointer",
-              height: 64,
-            }}
-          >
-            <ShoppingCartIcon sx={{ width: 30, height: 30 }} />
-          </Box>
+          {page == "home" ? null : (
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                cursor: "pointer",
+                height: 64,
+              }}
+            >
+              <ShoppingCartIcon sx={{ width: 30, height: 30, mx: 1 }} />
+              <Box
+                sx={{
+                  display: "flex",
+                  position: "relative",
+                  alignItems: "center",
+                  bgcolor: "golden.main",
+                  borderRadius: "2px",
+                  height: 24,
+                  pr: "3px",
+                  "&::after": {
+                    display: "block",
+                    content: `""`,
+                    width: 18,
+                    height: 18,
+                    left: -8,
+                    position: "absolute",
+                    bgcolor: "golden.main",
+                    borderRadius: "3px",
+                    transform: "rotate(45deg)",
+                    zIndex: -1,
+                  },
+                }}
+              >
+                <Typography
+                  sx={{ color: "black", fontSize: 15, letterSpacing: 0.6 }}
+                >
+                  £0.00
+                </Typography>
+              </Box>
+            </Box>
+          )}
         </Toolbar>
       </AppBar>
       <Offset />
