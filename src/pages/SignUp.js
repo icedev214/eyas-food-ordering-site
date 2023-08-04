@@ -83,6 +83,7 @@ const SignUp = () => {
               <Box sx={{ display: "flex", gap: 0.5 }}>
                 <Typography sx={{ fontSize: 14 }}>I agree with</Typography>
                 <Link
+                  to="/terms-of-use"
                   style={{
                     fontSize: 14,
                     textDecoration: "none",
@@ -93,6 +94,7 @@ const SignUp = () => {
                 </Link>
                 <Typography sx={{ fontSize: 14 }}>and</Typography>
                 <Link
+                  to="/privacy-policy"
                   style={{
                     fontSize: 14,
                     textDecoration: "none",
