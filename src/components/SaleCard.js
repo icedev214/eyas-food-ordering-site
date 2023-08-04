@@ -42,7 +42,7 @@ const SaleCard = ({ data }) => {
         <Box sx={{ flexGrow: 1 }} />
         <Button
           variant="contained"
-          color="green"
+          color="forest"
           startIcon={<AddShoppingCartIcon />}
           sx={{
             color: "white",

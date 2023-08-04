@@ -115,7 +115,32 @@ const SalesContent = () => {
           mt: 4,
         }}
       >
-        <Pagination count={10} shape="rounded" />
+        <Pagination
+          count={10}
+          showFirstButton
+          showLastButton
+          sx={{
+            ".MuiPaginationItem-root": {
+              borderRadius: "2px",
+              backgroundColor: "white",
+              border: "1px solid rgba(0,0,0,0.1)",
+              color: "black",
+              fontSize: 16,
+            },
+            ".MuiPaginationItem-root.Mui-selected": {
+              backgroundColor: "danger.dark",
+              color: "white",
+              border: "none",
+            },
+            ".MuiPaginationItem-ellipsis": {
+              borderRadius: "2px",
+              backgroundColor: "transparent",
+              border: "none",
+              color: "black",
+              fontSize: 16,
+            },
+          }}
+        />
       </Box>
     </>
   );

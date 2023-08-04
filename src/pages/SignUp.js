@@ -44,11 +44,11 @@ const SignUp = () => {
       <Card sx={{ flexGrow: 1, maxWidth: 600, borderRadius: 0 }} elevation={3}>
         <CardContent sx={{ p: 3 }}>
           <Typography sx={{ fontSize: 14 }}>E-mail</Typography>
-          <TextField variant="standard" color="green" fullWidth></TextField>
+          <TextField variant="standard" color="forest" fullWidth></TextField>
           <Typography sx={{ fontSize: 14, mt: 2 }}>Password</Typography>
           <TextField
             variant="standard"
-            color="green"
+            color="forest"
             fullWidth
             type={showPassword ? "text" : "password"}
             InputProps={{
@@ -76,7 +76,7 @@ const SignUp = () => {
             }}
           ></TextField>
           <Typography sx={{ fontSize: 14, mt: 2 }}>Your Phone</Typography>
-          <TextField variant="standard" color="green" fullWidth></TextField>
+          <TextField variant="standard" color="forest" fullWidth></TextField>
           <FormControlLabel
             control={<Checkbox size="small" />}
             label={
@@ -117,7 +117,7 @@ const SignUp = () => {
           >
             <Button
               variant="contained"
-              color="green"
+              color="forest"
               sx={{ color: "white", px: 4, letterSpacing: 0.6 }}
             >
               CREATE NEW ACCOUNT

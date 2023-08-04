@@ -56,8 +56,10 @@ const NavBar = () => {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
         position="fixed"
-        style={{ background: "#ea0713" }}
-        sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        sx={{
+          backgroundColor: "danger.main",
+          zIndex: (theme) => theme.zIndex.drawer + 1,
+        }}
       >
         <Toolbar style={{ paddingLeft: 12, paddingRight: 12 }}>
           <Box
@@ -124,7 +126,7 @@ const NavBar = () => {
                   sx={{
                     fontSize: 17,
                     fontWeight: 600,
-                    color: "green.main",
+                    color: "forest.main",
                     my: 2.5,
                   }}
                 >
