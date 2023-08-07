@@ -61,11 +61,19 @@ const menu_data = [
 
 const SalesMenu = () => {
   const [menuData, setMenuData] = useState(menu_data);
+  const [selectedIndex, setSelectedIndex] = useState(-1);
 
   return (
     <Card sx={{ padding: 0, borderRadius: 0 }} elevation={3}>
-      <CardContent sx={{ px: 0, pt: 1 }} style={{ paddingBottom: 0 }}>
-        <List>
+      <CardContent sx={{ px: 0, pt: 1 }} style={{ paddingBottom: 16 }}>
+        <List
+          sx={{
+            ".MuiListItemButton-root.Mui-selected": {
+              backgroundColor: "danger.dark",
+              color: "white",
+            },
+          }}
+        >
           <ListItem>
             <Typography sx={{ fontSize: 20, fontWeight: 600 }}>Menu</Typography>
           </ListItem>
@@ -73,7 +81,14 @@ const SalesMenu = () => {
           {menuData.map((data, index) => {
             return (
               <Box key={index}>
-                <ListItemButton>{data}</ListItemButton>
+                <ListItemButton
+                  selected={index == selectedIndex}
+                  onClick={() => {
+                    setSelectedIndex(index);
+                  }}
+                >
+                  {data}
+                </ListItemButton>
                 {index == menuData.length - 1 ? null : (
                   <Divider sx={{ mx: 2 }} />
                 )}
