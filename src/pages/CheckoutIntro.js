@@ -102,7 +102,7 @@ const CheckoutIntro = () => {
           <TabPanel value={tabValue} index={0}>
             <Typography sx={{ fontSize: 14 }}>Your name</Typography>
             <TextField variant="standard" color="forest" fullWidth />
-            <Typography sx={{ fontSize: 14, mt: 2 }}>Your Phone</Typography>
+            <Typography sx={{ fontSize: 14, mt: 2 }}>Your phone</Typography>
             <TextField variant="standard" color="forest" fullWidth />
             <FormControlLabel
               control={<Checkbox size="small" />}

@@ -23,10 +23,12 @@ import { useState, useEffect } from "react";
 
 const CheckoutEdit = () => {
   const [coupon, setCoupon] = useState("");
-  const [commentLength, setCommentLength] = useState(0);
+  const [comment, setComment] = useState("");
   const [name, setName] = useState("User");
   const [phone, setPhone] = useState("+44 1223 24 2332");
   const [isInfoEditing, setIsInfoEditing] = useState(false);
+  const [paymentMethod, setPaymentMethod] = useState("");
+  const [receivingWay, setReceivingWay] = useState("collection");
 
   const commentMaxLength = 500;
 
@@ -48,7 +50,12 @@ const CheckoutEdit = () => {
               Choose payment method
             </Typography>
             <Divider sx={{ mb: 2 }} />
-            <RadioGroup defaultValue="card">
+            <RadioGroup
+              value={paymentMethod}
+              onChange={(event) => {
+                setPaymentMethod(event.target.value);
+              }}
+            >
               <FormControlLabel
                 value="card"
                 control={<Radio size="small" color="forest" />}
@@ -118,33 +125,87 @@ const CheckoutEdit = () => {
               multiline
               rows={3}
               inputProps={{ maxLength: commentMaxLength }}
+              value={comment}
               onChange={(event) => {
-                setCommentLength(event.target.value.length);
+                setComment(event.target.value);
               }}
             />
             <Typography
               sx={{ fontSize: 14, mt: 2 }}
-            >{`${commentLength}/${commentMaxLength}`}</Typography>
+            >{`${comment.length}/${commentMaxLength}`}</Typography>
           </CardContent>
         </Card>
       </Grid>
       <Grid item xs={12} md={4}>
         <Card sx={{ borderRadius: 0, mb: 2 }} elevation={3}>
           <CardContent sx={{ p: 3 }}>
-            <Box sx={{ display: "flex", alignItems: "center" }}>
-              <AccountCircle sx={{ color: "#cccccc" }} />
-              <Typography sx={{ mx: 1, color: "black" }}>
-                <b>User</b>, +44 1223 24 3224
-              </Typography>
-              <IconButton>
-                <EditIcon />
-              </IconButton>
-            </Box>
+            {isInfoEditing ? (
+              <Box>
+                <Typography sx={{ fontSize: 14 }}>Your name</Typography>
+                <TextField
+                  variant="standard"
+                  color="forest"
+                  fullWidth
+                  value={name}
+                  onChange={(event) => {
+                    setName(event.target.value);
+                  }}
+                />
+                <Typography sx={{ fontSize: 14, mt: 2 }}>Your phone</Typography>
+                <TextField
+                  variant="standard"
+                  color="forest"
+                  fullWidth
+                  value={phone}
+                  onChange={(event) => {
+                    setPhone(event.target.value);
+                  }}
+                />
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    flexDirection: "column",
+                    mt: 2,
+                  }}
+                >
+                  <Button
+                    variant="contained"
+                    color="forest"
+                    sx={{ color: "white", px: 4, letterSpacing: 0.6 }}
+                    onClick={() => {
+                      setIsInfoEditing(false);
+                    }}
+                  >
+                    OK
+                  </Button>
+                </Box>
+              </Box>
+            ) : (
+              <Box sx={{ display: "flex", alignItems: "center" }}>
+                <AccountCircle sx={{ color: "#cccccc" }} />
+                <Typography sx={{ mx: 1, color: "black" }}>
+                  <b>{name}</b>, {phone}
+                </Typography>
+                <IconButton
+                  onClick={() => {
+                    setIsInfoEditing(true);
+                  }}
+                >
+                  <EditIcon />
+                </IconButton>
+              </Box>
+            )}
           </CardContent>
         </Card>
         <Card sx={{ borderRadius: 0, mb: 2 }} elevation={3}>
           <CardContent sx={{ p: 3 }}>
-            <RadioGroup defaultValue="collection">
+            <RadioGroup
+              value={receivingWay}
+              onChange={(event) => {
+                setReceivingWay(event.target.value);
+              }}
+            >
               <Grid container spacing={2}>
                 <Grid item xs={6}>
                   <FormControlLabel
@@ -166,20 +227,33 @@ const CheckoutEdit = () => {
                     25 minutes *
                   </Typography>
                 </Grid>
-                <Box
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    width: "100%",
-                    mt: 1,
-                  }}
-                >
-                  <Box sx={{ flexGrow: 1 }} />
-                  <Typography sx={{ fontSize: 13, fontWeight: 600 }}>
-                    * Average time
-                  </Typography>
-                </Box>
               </Grid>
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  width: "100%",
+                  mt: 1,
+                }}
+              >
+                <Box sx={{ flexGrow: 1 }} />
+                <Typography sx={{ fontSize: 13, fontWeight: 600 }}>
+                  * Average time
+                </Typography>
+              </Box>
+              {receivingWay === "delivery" ? (
+                <>
+                  <Typography sx={{ fontSize: 14 }}>Postal code</Typography>
+                  <TextField variant="standard" color="forest" fullWidth />
+                  <Typography sx={{ fontSize: 14, mt: 2 }}>Address</Typography>
+                  <TextField
+                    variant="standard"
+                    color="forest"
+                    fullWidth
+                    placeholder="Street, house, etc ..."
+                  />
+                </>
+              ) : null}
             </RadioGroup>
           </CardContent>
         </Card>

@@ -16,6 +16,7 @@ import PrivacyPolicy from "pages/PrivacyPolicy";
 import TermsOfUse from "pages/TermsOfUse";
 import CheckoutIntro from "pages/CheckoutIntro";
 import CheckoutEdit from "pages/CheckoutEdit";
+import ReviewOrder from "pages/ReviewOrder";
 
 import NavBar from "components/NavBar";
 import Banner from "components/Banner";
@@ -81,6 +82,7 @@ function App() {
               <Route path="/terms-of-use" element={<TermsOfUse />} />
               <Route path="/checkout-intro" element={<CheckoutIntro />} />
               <Route path="/checkout-edit" element={<CheckoutEdit />} />
+              <Route path="/review-order" element={<ReviewOrder />} />
             </Routes>
           </Box>
           <Routes>
