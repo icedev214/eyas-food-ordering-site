@@ -26,7 +26,7 @@ const SignIn = () => {
 
   useEffect(() => {
     dispatch(setPage("signin"));
-  }, []);
+  }, [dispatch]);
 
   return (
     <Box
@@ -90,7 +90,7 @@ const SignIn = () => {
             </Button>
           </Box>
           <Box sx={{ display: "flex", alignItems: "center", mt: 2 }}>
-            <Link to="/" style={{ color: "#4fbe62", fontSize: 14 }}>
+            <Link to="/signup" style={{ color: "#4fbe62", fontSize: 14 }}>
               I have no account registered
             </Link>
             <Box sx={{ flexGrow: 1 }} />

@@ -28,7 +28,7 @@ const SignUp = () => {
 
   useEffect(() => {
     dispatch(setPage("signup"));
-  }, []);
+  }, [dispatch]);
 
   return (
     <Box

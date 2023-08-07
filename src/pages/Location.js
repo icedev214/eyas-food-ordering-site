@@ -30,7 +30,7 @@ const Location = () => {
 
   useEffect(() => {
     dispatch(setPage("location"));
-  }, []);
+  }, [dispatch]);
 
   return (
     <Grid container spacing={2.6} sx={{ px: 10, py: 3, mb: 5 }}>

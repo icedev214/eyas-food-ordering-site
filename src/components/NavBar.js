@@ -74,140 +74,146 @@ const NavBar = () => {
             }}
           />
           <Box sx={{ flexGrow: 1 }} />
-          {page == "home" ? (
+          {page === "home" ? (
             <>
               <SearchField />
               <Box sx={{ flexGrow: 1 }} />
             </>
           ) : null}
-          <Box onMouseEnter={handlePopperOpen} onMouseLeave={handlePopperClose}>
-            <Button
-              variant="text"
-              startIcon={<AccessTimeIcon sx={{ width: 30, height: 30 }} />}
-              sx={{
-                color: "white",
-                fontSize: 14,
-                borderRadius: 0,
-                height: 64,
-                minWidth: 24,
-                "& .MuiButton-startIcon": {
-                  marginLeft: "0px",
-                  marginRight: down_lg_matches ? "0px" : "6px",
-                },
-                px: 1.2,
-                cursor: "default",
-              }}
-              style={{
-                backgroundColor: anchorEl ? "#0000001a" : "transparent",
-              }}
-              disableRipple
-            >
-              {down_lg_matches ? "" : "Open"}
-            </Button>
-            <Popper
-              anchorEl={anchorEl}
-              open={Boolean(anchorEl)}
-              placement="bottom-end"
-              sx={{ zIndex: (theme) => theme.zIndex.drawer + 2 }}
-            >
-              <Paper
-                sx={{
-                  borderRadius: 0,
-                  boxShadow: 3,
-                  px: 3,
-                  py: 4,
-                }}
+          {page !== "checkout" ? (
+            <>
+              <Box
+                onMouseEnter={handlePopperOpen}
+                onMouseLeave={handlePopperClose}
               >
-                <Typography sx={{ fontSize: 24, color: "black" }} gutterBottom>
-                  We are open now!
-                </Typography>
-                <Divider />
-                <Typography
+                <Button
+                  variant="text"
+                  startIcon={<AccessTimeIcon sx={{ width: 30, height: 30 }} />}
                   sx={{
-                    fontSize: 17,
-                    fontWeight: 600,
-                    color: "forest.main",
-                    my: 2.5,
+                    color: "white",
+                    fontSize: 14,
+                    borderRadius: 0,
+                    height: 64,
+                    minWidth: 24,
+                    "& .MuiButton-startIcon": {
+                      marginLeft: "0px",
+                      marginRight: down_lg_matches ? "0px" : "6px",
+                    },
+                    px: 1.2,
+                    cursor: "default",
                   }}
+                  style={{
+                    backgroundColor: anchorEl ? "#0000001a" : "transparent",
+                  }}
+                  disableRipple
                 >
-                  Opening hours
-                </Typography>
-                {weekdays.map((day, index) => {
-                  return (
-                    <Box key={index}>
-                      <Box sx={{ display: "flex" }}>
-                        <Typography
-                          sx={{
-                            color: "black",
-                            fontWeight: 600,
-                            fontSize: 15,
-                          }}
-                        >{`${day}:`}</Typography>
-                        <Box sx={{ flexGrow: 1 }} />
-                        <Typography sx={{ color: "black", fontSize: 15 }}>
-                          0:00 - 0:00
-                        </Typography>
-                      </Box>
-                      {index == weekdays.length - 1 ? null : (
-                        <Divider sx={{ my: 1.5 }} />
-                      )}
-                    </Box>
-                  );
-                })}
-              </Paper>
-            </Popper>
-          </Box>
-          <Button
-            variant="standard"
-            startIcon={<ExitToAppIcon sx={{ width: 30, height: 30 }} />}
-            sx={{
-              color: "white",
-              fontSize: 14,
-              borderRadius: 0,
-              height: 64,
-              minWidth: 24,
-              "& .MuiButton-startIcon": {
-                marginLeft: "0px",
-                marginRight: down_lg_matches ? "0px" : "6px",
-              },
-              "&:hover": {
-                backgroundColor: "#0000001a",
-              },
-              px: 1.2,
-            }}
-            disableRipple
-            onClick={() => {
-              navigate("/signin");
-            }}
-          >
-            {down_lg_matches ? "" : "Sign In"}
-          </Button>
-          <Button
-            variant="standard"
-            startIcon={<PersonAddIcon sx={{ width: 30, height: 30 }} />}
-            sx={{
-              color: "white",
-              fontSize: 14,
-              borderRadius: 0,
-              height: 64,
-              minWidth: 24,
-              "& .MuiButton-startIcon": {
-                marginLeft: "0px",
-                marginRight: down_lg_matches ? "0px" : "6px",
-              },
-              "&:hover": {
-                backgroundColor: "#0000001a",
-              },
-              px: 1.2,
-            }}
-            disableRipple
-            onClick={() => {
-              navigate("/signup");
-            }}
-          >
-            {down_lg_matches ? "" : "Sign Up"}
-          </Button>
-          {page == "home" ? null : (
+                  {down_lg_matches ? "" : "Open"}
+                </Button>
+                <Popper
+                  anchorEl={anchorEl}
+                  open={Boolean(anchorEl)}
+                  placement="bottom-end"
+                  sx={{ zIndex: (theme) => theme.zIndex.drawer + 2 }}
+                >
+                  <Paper
+                    sx={{
+                      borderRadius: 0,
+                      boxShadow: 3,
+                      px: 3,
+                      py: 4,
+                    }}
+                  >
+                    <Typography
+                      sx={{ fontSize: 24, color: "black" }}
+                      gutterBottom
+                    >
+                      We are open now!
+                    </Typography>
+                    <Divider />
+                    <Typography
+                      sx={{
+                        fontSize: 17,
+                        fontWeight: 600,
+                        color: "forest.main",
+                        my: 2.5,
+                      }}
+                    >
+                      Opening hours
+                    </Typography>
+                    {weekdays.map((day, index) => {
+                      return (
+                        <Box key={index}>
+                          <Box sx={{ display: "flex" }}>
+                            <Typography
+                              sx={{
+                                color: "black",
+                                fontWeight: 600,
+                                fontSize: 15,
+                              }}
+                            >{`${day}:`}</Typography>
+                            <Box sx={{ flexGrow: 1 }} />
+                            <Typography sx={{ color: "black", fontSize: 15 }}>
+                              0:00 - 0:00
+                            </Typography>
+                          </Box>
+                          {index == weekdays.length - 1 ? null : (
+                            <Divider sx={{ my: 1.5 }} />
+                          )}
+                        </Box>
+                      );
+                    })}
+                  </Paper>
+                </Popper>
+              </Box>
+              <Button
+                variant="standard"
+                startIcon={<ExitToAppIcon sx={{ width: 30, height: 30 }} />}
+                sx={{
+                  color: "white",
+                  fontSize: 14,
+                  borderRadius: 0,
+                  height: 64,
+                  minWidth: 24,
+                  "& .MuiButton-startIcon": {
+                    marginLeft: "0px",
+                    marginRight: down_lg_matches ? "0px" : "6px",
+                  },
+                  "&:hover": {
+                    backgroundColor: "#0000001a",
+                  },
+                  px: 1.2,
+                }}
+                disableRipple
+                href="/signin"
+              >
+                {down_lg_matches ? "" : "Sign In"}
+              </Button>
+              <Button
+                variant="standard"
+                startIcon={<PersonAddIcon sx={{ width: 30, height: 30 }} />}
+                sx={{
+                  color: "white",
+                  fontSize: 14,
+                  borderRadius: 0,
+                  height: 64,
+                  minWidth: 24,
+                  "& .MuiButton-startIcon": {
+                    marginLeft: "0px",
+                    marginRight: down_lg_matches ? "0px" : "6px",
+                  },
+                  "&:hover": {
+                    backgroundColor: "#0000001a",
+                  },
+                  px: 1.2,
+                }}
+                disableRipple
+                href="/signup"
+              >
+                {down_lg_matches ? "" : "Sign Up"}
+              </Button>
+            </>
+          ) : null}
+          {page === "home" || page === "checkout" ? null : (
             <Box
               sx={{
                 display: "flex",

@@ -10,6 +10,8 @@ const pageBannerDic = {
   signin: "Sign In",
   signup: "Sign Up",
   location: "Our Location",
+  "checkout-intro": "Please introduce yourself",
+  "checkout-edit": "Checkout",
 };
 
 const Banner = () => {
