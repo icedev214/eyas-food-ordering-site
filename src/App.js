@@ -38,6 +38,7 @@ const eyasTheme = createTheme({
     },
     golden: {
       main: "#fce57f",
+      light: "#ffecb3",
     },
     forest: {
       main: "#4fbe62",

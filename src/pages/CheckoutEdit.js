@@ -275,7 +275,7 @@ const CheckoutEdit = () => {
             <Divider sx={{ mb: 2 }} />
           </CardContent>
         </Card>
-        <Card sx={{ borderRadius: 0, mb: 2 }} elevation={3}>
+        <Card sx={{ borderRadius: 0 }} elevation={3}>
           <CardContent sx={{ p: 3 }}>
             <Typography
               sx={{ fontSize: 24, fontWeight: 600, letterSpacing: 0.6 }}
@@ -285,9 +285,9 @@ const CheckoutEdit = () => {
             </Typography>
             <Divider sx={{ mb: 2 }} />
             <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
-              <Typography sx={{ fontSize: 14 }}>Subtotal:</Typography>
+              <Typography sx={{ fontSize: 15 }}>Subtotal:</Typography>
               <Box sx={{ flexGrow: 1 }} />
-              <Typography sx={{ fontSize: 14 }}>£38.85</Typography>
+              <Typography sx={{ fontSize: 15 }}>£38.85</Typography>
             </Box>
             <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
               <Typography sx={{ fontSize: 20, fontWeight: 600 }}>

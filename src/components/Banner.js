@@ -12,6 +12,7 @@ const pageBannerDic = {
   location: "Our Location",
   "checkout-intro": "Please introduce yourself",
   "checkout-edit": "Checkout",
+  "review-order": "Please review your order",
 };
 
 const Banner = () => {
