@@ -18,6 +18,7 @@ import CheckoutIntro from "pages/CheckoutIntro";
 import CheckoutEdit from "pages/CheckoutEdit";
 import ReviewOrder from "pages/ReviewOrder";
 import Payment from "pages/Payment";
+import CheckoutComplete from "pages/CheckoutComplete";
 
 import NavBar from "components/NavBar";
 import Banner from "components/Banner";
@@ -88,7 +89,8 @@ function App() {
               <Route path="/checkout-intro" element={<CheckoutIntro />} />
               <Route path="/checkout-edit" element={<CheckoutEdit />} />
               <Route path="/review-order" element={<ReviewOrder />} />
-              <Route path="payment" element={<Payment />} />
+              <Route path="/payment" element={<Payment />} />
+              <Route path="/checkout-complete" element={<CheckoutComplete />} />
             </Routes>
           </Box>
           <Routes>

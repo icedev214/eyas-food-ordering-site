@@ -14,6 +14,7 @@ const pageBannerDic = {
   "checkout-edit": "Checkout",
   "review-order": "Please review your order",
   payment: "Pay for order",
+  "checkout-complete": "Checkout complete",
 };
 
 const Banner = () => {
