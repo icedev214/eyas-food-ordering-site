@@ -13,6 +13,7 @@ const pageBannerDic = {
   "checkout-intro": "Please introduce yourself",
   "checkout-edit": "Checkout",
   "review-order": "Please review your order",
+  payment: "Pay for order",
 };
 
 const Banner = () => {

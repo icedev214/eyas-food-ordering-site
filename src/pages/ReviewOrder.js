@@ -138,8 +138,8 @@ const ReviewOrder = () => {
       >
         <Button
           variant="contained"
+          color="lightgold"
           sx={{
-            backgroundColor: "golden.light",
             color: "black",
             px: 4,
             letterSpacing: 0.6,

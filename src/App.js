@@ -17,6 +17,7 @@ import TermsOfUse from "pages/TermsOfUse";
 import CheckoutIntro from "pages/CheckoutIntro";
 import CheckoutEdit from "pages/CheckoutEdit";
 import ReviewOrder from "pages/ReviewOrder";
+import Payment from "pages/Payment";
 
 import NavBar from "components/NavBar";
 import Banner from "components/Banner";
@@ -39,6 +40,9 @@ const eyasTheme = createTheme({
     golden: {
       main: "#fce57f",
       light: "#ffecb3",
+    },
+    lightgold: {
+      main: "#ffecb3",
     },
     forest: {
       main: "#4fbe62",
@@ -84,6 +88,7 @@ function App() {
               <Route path="/checkout-intro" element={<CheckoutIntro />} />
               <Route path="/checkout-edit" element={<CheckoutEdit />} />
               <Route path="/review-order" element={<ReviewOrder />} />
+              <Route path="payment" element={<Payment />} />
             </Routes>
           </Box>
           <Routes>
