@@ -16,6 +16,8 @@ import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import RestaurantMenuIcon from "@mui/icons-material/RestaurantMenu";
 
+import { Link } from "react-router-dom";
+
 import SearchField from "components/SearchField";
 
 import styled from "@emotion/styled";
@@ -64,17 +66,15 @@ const NavBar = () => {
         }}
       >
         <Toolbar style={{ paddingLeft: 12, paddingRight: 12 }}>
-          <Box
-            sx={{
-              backgroundImage: "url('/images/chef.jpg')",
-              width: 57,
-              height: 60,
-              cursor: "pointer",
-            }}
-            onClick={() => {
-              navigate("/");
-            }}
-          />
+          <Link to="/">
+            <Box
+              sx={{
+                backgroundImage: "url('/images/chef.jpg')",
+                width: 57,
+                height: 60,
+              }}
+            />
+          </Link>
           <Box sx={{ flexGrow: 1 }} />
           {page === "home" ? (
             <>
@@ -82,7 +82,35 @@ const NavBar = () => {
               <Box sx={{ flexGrow: 1 }} />
             </>
           ) : null}
-          {page !== "checkout" ? (
+          {page === "checkout-intro" ||
+          page === "checkout-edit" ||
+          page === "review-order" ||
+          page === "payment" ||
+          page === "checkout-complete" ? (
+            <Button
+              variant="standard"
+              startIcon={<RestaurantMenuIcon sx={{ width: 30, height: 30 }} />}
+              sx={{
+                color: "white",
+                fontSize: 14,
+                borderRadius: 0,
+                height: 64,
+                minWidth: 24,
+                "& .MuiButton-startIcon": {
+                  marginLeft: "0px",
+                  marginRight: down_lg_matches ? "0px" : "6px",
+                },
+                "&:hover": {
+                  backgroundColor: "transparent",
+                },
+                px: 1.2,
+              }}
+              disableRipple
+              href="/"
+            >
+              Back to Menu
+            </Button>
+          ) : (
             <>
               <Box
                 onMouseEnter={handlePopperOpen}
@@ -213,73 +241,50 @@ const NavBar = () => {
               >
                 {down_lg_matches ? "" : "Sign Up"}
               </Button>
-            </>
-          ) : null}
-          {page === "home" || page === "checkout" ? null : (
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                cursor: "pointer",
-                height: 64,
-              }}
-            >
-              <ShoppingCartIcon sx={{ width: 30, height: 30, mx: 1 }} />
-              <Box
-                sx={{
-                  display: "flex",
-                  position: "relative",
-                  alignItems: "center",
-                  bgcolor: "golden.main",
-                  borderRadius: "2px",
-                  height: 24,
-                  pr: "3px",
-                  "&::after": {
-                    display: "block",
-                    content: `""`,
-                    width: 18,
-                    height: 18,
-                    left: -8,
-                    position: "absolute",
-                    bgcolor: "golden.main",
-                    borderRadius: "3px",
-                    transform: "rotate(45deg)",
-                    zIndex: -1,
-                  },
-                }}
-              >
-                <Typography
-                  sx={{ color: "black", fontSize: 15, letterSpacing: 0.6 }}
+              {page === "home" ? null : (
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    cursor: "pointer",
+                    height: 64,
+                  }}
                 >
-                  £0.00
-                </Typography>
-              </Box>
-            </Box>
+                  <ShoppingCartIcon sx={{ width: 30, height: 30, mx: 1 }} />
+                  <Box
+                    sx={{
+                      display: "flex",
+                      position: "relative",
+                      alignItems: "center",
+                      bgcolor: "golden.main",
+                      borderRadius: "2px",
+                      height: 24,
+                      pr: "3px",
+                      "&::after": {
+                        display: "block",
+                        content: `""`,
+                        width: 18,
+                        height: 18,
+                        left: -8,
+                        position: "absolute",
+                        bgcolor: "golden.main",
+                        borderRadius: "3px",
+                        transform: "rotate(45deg)",
+                        zIndex: -1,
+                      },
+                    }}
+                  >
+                    <Typography
+                      sx={{ color: "black", fontSize: 15, letterSpacing: 0.6 }}
+                    >
+                      £0.00
+                    </Typography>
+                  </Box>
+                </Box>
+              )}
+            </>
           )}
-          {/* <Button
-            variant="standard"
-            startIcon={<RestaurantMenuIcon sx={{ width: 30, height: 30 }} />}
-            sx={{
-              color: "white",
-              fontSize: 14,
-              borderRadius: 0,
-              height: 64,
-              minWidth: 24,
-              "& .MuiButton-startIcon": {
-                marginLeft: "0px",
-                marginRight: down_lg_matches ? "0px" : "6px",
-              },
-              "&:hover": {
-                backgroundColor: "#0000001a",
-              },
-              px: 1.2,
-            }}
-            disableRipple
-            href="/signup"
-          >
-            Back to Menu
-          </Button> */}
         </Toolbar>
       </AppBar>
       <Offset />

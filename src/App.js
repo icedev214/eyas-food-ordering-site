@@ -1,11 +1,9 @@
 import { Box } from "@mui/material";
 
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import MainLayout from "layouts/MainLayout";
+import HomeLayout from "layouts/HomeLayout";
 
 import Home from "pages/Home";
 import SignIn from "pages/SignIn";
@@ -76,7 +74,7 @@ const eyasTheme = createTheme({
   },
 });
 
-function App() {
+const App = () => {
   const { page } = useSelector((state) => state.navigation);
   const [showCookie, setShowCookie] = useState(false);
 
@@ -84,30 +82,24 @@ function App() {
     <ThemeProvider theme={eyasTheme}>
       <CssBaseline />
       <Router>
-        <NavBar />
-        <Box sx={{ display: "flex" }}>
-          <Box sx={{ flexGrow: 1 }}>
-            <Banner />
-            <Routes>
-              <Route index element={<Home />} />
-              <Route path="/signin" element={<SignIn />} />
-              <Route path="/signup" element={<SignUp />} />
-              <Route path="/location" element={<Location />} />
-              <Route path="/cookie-policy" element={<CookiePolicy />} />
-              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-              <Route path="/terms-of-use" element={<TermsOfUse />} />
-              <Route path="/checkout-intro" element={<CheckoutIntro />} />
-              <Route path="/checkout-edit" element={<CheckoutEdit />} />
-              <Route path="/review-order" element={<ReviewOrder />} />
-              <Route path="/payment" element={<Payment />} />
-              <Route path="/checkout-complete" element={<CheckoutComplete />} />
-            </Routes>
-          </Box>
-          <Routes>
-            <Route index element={<Cart />} />
-          </Routes>
-        </Box>
-        <Footer />
+        <Routes>
+          <Route element={<HomeLayout />}>
+            <Route index element={<Home />} />
+          </Route>
+          <Route element={<MainLayout />}>
+            <Route path="/signin" element={<SignIn />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/location" element={<Location />} />
+            <Route path="/cookie-policy" element={<CookiePolicy />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-of-use" element={<TermsOfUse />} />
+            <Route path="/checkout-intro" element={<CheckoutIntro />} />
+            <Route path="/checkout-edit" element={<CheckoutEdit />} />
+            <Route path="/review-order" element={<ReviewOrder />} />
+            <Route path="/payment" element={<Payment />} />
+            <Route path="/checkout-complete" element={<CheckoutComplete />} />
+          </Route>
+        </Routes>
         {showCookie ? (
           <CookieSetting
             onClose={() => {
@@ -124,6 +116,6 @@ function App() {
       </Router>
     </ThemeProvider>
   );
-}
+};
 
 export default App;

@@ -24,8 +24,10 @@ const Banner = () => {
     <Box
       sx={{
         backgroundImage:
-          page == "home"
+          page === "home"
             ? "url('/images/banner-back-1.jpg')"
+            : page === "checkout-complete"
+            ? "url('/images/checkout-complete.jpg')"
             : "url('/images/steak.jpg')",
         backgroundPosition: "center",
         height: 240,

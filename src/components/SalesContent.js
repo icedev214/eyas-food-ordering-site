@@ -114,7 +114,7 @@ const sales_data = [
 
 const SalesContent = () => {
   const [salesData, setSalesData] = useState(sales_data);
-  const [addOpen, setAddOpen] = useState(true);
+  const [addOpen, setAddOpen] = useState(false);
   const [addAmount, setAddAmount] = useState(1);
 
   const openAddDialog = () => {
