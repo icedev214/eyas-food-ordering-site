@@ -25,11 +25,14 @@ import Banner from "components/Banner";
 import Cart from "components/Cart";
 import Footer from "components/Footer";
 import CookieButton from "components/CookieButton";
+import CookieSetting from "components/CookieSetting";
 
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
 
 import { useSelector } from "react-redux";
+
+import { useState } from "react";
 
 import "@fontsource/lato";
 
@@ -69,6 +72,7 @@ const eyasTheme = createTheme({
 
 function App() {
   const { page } = useSelector((state) => state.navigation);
+  const [showCookie, setShowCookie] = useState(false);
 
   return (
     <ThemeProvider theme={eyasTheme}>
@@ -98,7 +102,19 @@ function App() {
           </Routes>
         </Box>
         <Footer />
-        <CookieButton />
+        {showCookie ? (
+          <CookieSetting
+            onClose={() => {
+              setShowCookie(false);
+            }}
+          />
+        ) : (
+          <CookieButton
+            onClick={() => {
+              setShowCookie(true);
+            }}
+          />
+        )}
       </Router>
     </ThemeProvider>
   );

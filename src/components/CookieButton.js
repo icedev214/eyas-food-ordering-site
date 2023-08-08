@@ -4,7 +4,7 @@ import { useRef } from "react";
 
 import { styled } from "@mui/material/styles";
 
-const CookieButton = () => {
+const CookieButton = ({ onClick }) => {
   const areaRef = useRef(null);
 
   return (
@@ -26,7 +26,7 @@ const CookieButton = () => {
           sx: {
             px: 2.4,
             bgcolor: "#00000080",
-            borderColor: "black",
+            border: "none",
             transform: "rotate(45deg)",
           },
         },
@@ -63,6 +63,7 @@ const CookieButton = () => {
           bottom: 0,
           cursor: "pointer",
         }}
+        onClick={onClick}
       >
         <Box
           sx={{
