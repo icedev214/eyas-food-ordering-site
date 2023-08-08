@@ -17,6 +17,7 @@ import CheckoutEdit from "pages/CheckoutEdit";
 import ReviewOrder from "pages/ReviewOrder";
 import Payment from "pages/Payment";
 import CheckoutComplete from "pages/CheckoutComplete";
+import Page404 from "pages/Page404";
 
 import NavBar from "components/NavBar";
 import Banner from "components/Banner";
@@ -98,6 +99,7 @@ const App = () => {
             <Route path="/review-order" element={<ReviewOrder />} />
             <Route path="/payment" element={<Payment />} />
             <Route path="/checkout-complete" element={<CheckoutComplete />} />
+            <Route path="*" element={<Page404 />} />
           </Route>
         </Routes>
         {showCookie ? (
