@@ -11,7 +11,7 @@ import {
 
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
-const SaleCard = ({ data }) => {
+const SaleCard = ({ data, onAdd }) => {
   const down_lg_matches = useMediaQuery((theme) =>
     theme.breakpoints.down("lg")
   );
@@ -56,6 +56,7 @@ const SaleCard = ({ data }) => {
             },
             px: 1.6,
           }}
+          onClick={onAdd}
         >
           {down_lg_matches ? "" : "ADD TO CART"}
         </Button>

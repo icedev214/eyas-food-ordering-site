@@ -72,6 +72,9 @@ const SalesMenu = () => {
               backgroundColor: "danger.dark",
               color: "white",
             },
+            ".MuiListItemButton-root.Mui-selected:hover": {
+              backgroundColor: "danger.dark",
+            },
           }}
         >
           <ListItem>

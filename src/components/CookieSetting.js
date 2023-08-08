@@ -5,7 +5,14 @@ import CheckIcon from "@mui/icons-material/Check";
 
 import { Link } from "react-router-dom";
 
+import { setUsage } from "redux/slices/cookie";
+
+import { useDispatch, useSelector } from "react-redux";
+
 const CookieSetting = ({ onClose }) => {
+  const dispatch = useDispatch();
+  const { usage } = useSelector((state) => state.cookie);
+
   return (
     <Box
       sx={{
@@ -50,24 +57,53 @@ const CookieSetting = ({ onClose }) => {
           fontSize: 14,
           color: "#4fbe62",
         }}
+        onClick={onClose}
       >
         Cookie Policy
       </Link>
       <Box sx={{ flexGrow: 1 }} />
       <Box sx={{ display: "flex", alignItems: "center" }}>
-        <CheckIcon sx={{ color: "#4fbe62", mr: 0.6 }} />
-        <Typography sx={{ fontSize: 14, color: "white" }}>
-          You agreed cookies usage
-        </Typography>
+        {usage ? (
+          <>
+            <CheckIcon sx={{ color: "forest.main", mr: 0.6 }} />
+            <Typography sx={{ fontSize: 14, color: "white" }}>
+              You agreed cookies usage
+            </Typography>
+          </>
+        ) : (
+          <>
+            <CloseIcon sx={{ color: "lightdanger.main", mr: 0.6 }} />
+            <Typography sx={{ fontSize: 14, color: "white" }}>
+              You disagreed cookies usage
+            </Typography>
+          </>
+        )}
         <Box sx={{ flexGrow: 1 }} />
-        <Button
-          variant="contained"
-          color="danger"
-          sx={{ color: "white", px: 4, letterSpacing: 0.6 }}
-          onClick={onClose}
-        >
-          I DISAGREE
-        </Button>
+        {usage ? (
+          <Button
+            variant="contained"
+            color="lightdanger"
+            sx={{ color: "white", px: 4, letterSpacing: 0.6 }}
+            onClick={() => {
+              onClose();
+              dispatch(setUsage(false));
+            }}
+          >
+            I DISAGREE
+          </Button>
+        ) : (
+          <Button
+            variant="contained"
+            color="forest"
+            sx={{ color: "white", px: 4, letterSpacing: 0.6 }}
+            onClick={() => {
+              onClose();
+              dispatch(setUsage(true));
+            }}
+          >
+            I AGREE
+          </Button>
+        )}
       </Box>
     </Box>
   );

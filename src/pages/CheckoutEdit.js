@@ -58,12 +58,12 @@ const CheckoutEdit = () => {
             >
               <FormControlLabel
                 value="card"
-                control={<Radio size="small" color="forest" />}
+                control={<Radio size="small" color="forest" disableRipple />}
                 label="Card"
               />
               <FormControlLabel
                 value="cash"
-                control={<Radio size="small" color="forest" />}
+                control={<Radio size="small" color="forest" disableRipple />}
                 label="Cash"
               />
             </RadioGroup>
@@ -210,7 +210,9 @@ const CheckoutEdit = () => {
                 <Grid item xs={6}>
                   <FormControlLabel
                     value="collection"
-                    control={<Radio size="small" color="forest" />}
+                    control={
+                      <Radio size="small" color="forest" disableRipple />
+                    }
                     label="Collection"
                   />
                   <Typography sx={{ fontSize: 13, ml: 3.2, fontWeight: 600 }}>
@@ -220,7 +222,9 @@ const CheckoutEdit = () => {
                 <Grid item xs={6}>
                   <FormControlLabel
                     value="delivery"
-                    control={<Radio size="small" color="forest" />}
+                    control={
+                      <Radio size="small" color="forest" disableRipple />
+                    }
                     label="Delivery (Free)"
                   />
                   <Typography sx={{ fontSize: 13, ml: 3.2, fontWeight: 600 }}>

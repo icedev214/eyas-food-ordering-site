@@ -9,10 +9,12 @@ import {
   Typography,
   Divider,
 } from "@mui/material";
+
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import RestaurantMenuIcon from "@mui/icons-material/RestaurantMenu";
 
 import SearchField from "components/SearchField";
 
@@ -255,6 +257,29 @@ const NavBar = () => {
               </Box>
             </Box>
           )}
+          {/* <Button
+            variant="standard"
+            startIcon={<RestaurantMenuIcon sx={{ width: 30, height: 30 }} />}
+            sx={{
+              color: "white",
+              fontSize: 14,
+              borderRadius: 0,
+              height: 64,
+              minWidth: 24,
+              "& .MuiButton-startIcon": {
+                marginLeft: "0px",
+                marginRight: down_lg_matches ? "0px" : "6px",
+              },
+              "&:hover": {
+                backgroundColor: "#0000001a",
+              },
+              px: 1.2,
+            }}
+            disableRipple
+            href="/signup"
+          >
+            Back to Menu
+          </Button> */}
         </Toolbar>
       </AppBar>
       <Offset />

@@ -41,6 +41,9 @@ const eyasTheme = createTheme({
     fore: {
       main: "#ffffff",
     },
+    darkgold: {
+      main: "#ffca28",
+    },
     golden: {
       main: "#fce57f",
       light: "#ffecb3",
@@ -54,6 +57,9 @@ const eyasTheme = createTheme({
     danger: {
       main: "#ea0713",
       dark: "#d50409",
+    },
+    lightdanger: {
+      main: "#f44336",
     },
   },
   typography: {
