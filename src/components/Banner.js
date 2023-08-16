@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 
 const pageBannerDic = {
   home: "Menu",
-  signin: "Sign In",
+  signin: "Login",
   signup: "Sign Up",
   location: "Our Location",
   "checkout-intro": "Please introduce yourself",
